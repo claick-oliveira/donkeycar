@@ -17,13 +17,10 @@ from docopt import docopt
 import donkeycar as dk
 
 from donkeycar.parts.camera import PiCamera
-from donkeycar.parts.transform import Lambda
-from donkeycar.parts.keras import KerasLinear
 from donkeycar.parts.actuator import PCA9685, PWMSteering, PWMThrottle
-from donkeycar.parts.datastore import TubGroup, TubWriter
 from donkeycar.parts.web_controller import LocalWebController
 from donkeycar.parts.clock import Timestamp
-from donkeycar.parts.datastore import TubGroup, TubWriter
+from donkeycar.parts.datastore import TubGroup, TubWriter, TubHandler
 from donkeycar.parts.keras import KerasLinear
 from donkeycar.parts.transform import Lambda
 
@@ -177,8 +174,3 @@ if __name__ == '__main__':
         base_model_path = args['--base_model']
         cache = not args['--no_cache']
         train(cfg, tub, new_model_path, base_model_path)
-
-
-
-
-
